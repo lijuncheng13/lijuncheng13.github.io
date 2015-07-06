@@ -55,3 +55,10 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 
 /************顶部导航*********************/
 .navigation_bar {height: 50px; background: #000; color: #fff; position: fixed; top:0px; left:0px;}
+
+.menu {width:70%; margin:0 auto;}
+.menu li {display:inline-block; *float:left; zoom:1; font-size:18px; width:32%; cursor:pointer;}
+.menu li a,
+.menu li a:visited {display:inline-block; zoom:1; color:#fff; width:100%;}
+.menu li a:hover {text-decoration:none;}
+.menu li.on span{color:red;}
