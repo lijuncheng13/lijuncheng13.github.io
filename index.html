@@ -16,6 +16,10 @@
 	</head>
 
 	<body>
+        <div id="navigation_show" class="navigation_show">
+            <img src="./letter-c.ico"/>
+        </div>
+
         <div class="navigation_bar">
             <div class="navigation">
                 <ul id="menu-menu-1" class="menu">
@@ -51,20 +55,83 @@
 
             <div id="top_social" class="social">
                 <a href="./">
-                    <img src="http://www.weibo.com/favicon.ico" alt="" width="25"/>
+                    <img src="http://www.weibo.com/favicon.ico" alt="" align="absmiddle"/>
                 </a>
                 <a href="./">
-                    <img src="http://weixin.qq.com/zh_CN/htmledition/images/favicon1fbcbe.ico"/>
+                    <img src="http://weixin.qq.com/zh_CN/htmledition/images/favicon1fbcbe.ico" align="absmiddle"/>
                 </a>
                 <a href="./">
-                    <img src="http://c.csdnimg.cn/public/favicon.ico"/>
+                    <img src="http://c.csdnimg.cn/public/favicon.ico" align="absmiddle"/>
                 </a>
             </div>
         </div>
+        <!-- END NAVIGATION_BAR -->
 
-        <div class="text">
-            <h1>Still empty.</h1>
+        <div class="container">
+             <div id="header">
+                <div id="logo">
+                    <a href="./">
+                        <img src="./cascade.jpg"/>
+                    </a>
+                </div>
+            </div>
+
+            <div id="featured_area" class="threeposts">
+                <div class="feature_big">
+                    <a href="./intro.html" rel="bookmark">
+                        <img src="./intro.png"
+                        alt="" />
+                    </a>
+                    <div class="feature_text">
+                        <p>
+                            Tinghua University. IIIS. <br/>
+                            Beijing. China. <br/>
+                            email: lijuncheng13@tsinghua.edu.cn
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature_small first">
+                    <h2>
+                        NEWS ABOUT MYSELF
+                    </h2>
+                    <p>
+                        <a href="./">
+                            2015-07-06 Summer term begins.
+                        </a>
+                        <br/>
+                        <a href="./">
+                            2015-07-01 Last exam finishes.
+                        </a>
+                        <br/>
+                        <a href="./news/myself.html">
+                            MORE
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="feature_small second">
+                    <h2>
+                        NEWS RECOMMENDED
+                    </h2>
+                    <p>
+                        <a href="http://blog.sina.com.cn/s/blog_44f5e7f70102vula.html">
+                            苏群：红酒醺醉了NBA中锋
+                        </a>
+                        <br/>
+                        <a href="http://www.w3school.com.cn/">
+                            w3school: web技术教程
+                        </a>
+                        <br/>
+                        <a href="./news/recommended.html">
+                            MORE
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- END FEATURED_AREA -->
         </div>
+        <!-- END CONTAINER -->
 
         <script type="text/javascript">
             $(function(){
@@ -76,6 +143,21 @@
                     }
                     else{
                         $('#sub-menu-homework').slideDown(200);
+                    }
+                });
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(function(){
+                $('#navigation_show').click(function(e){
+                    e.preventDefault();
+
+                    if($('.navigation_bar').is(':visible')){
+                        $('.navigation_bar').slideUp(200);
+                    }
+                    else{
+                        $('.navigation_bar').slideDown(200);
                     }
                 });
             })

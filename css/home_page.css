@@ -54,19 +54,20 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 #content {width:1060px;margin:90px auto 60px;min-height:400px;height:auto !important;height:400px; }
 
 /************顶部导航*********************/
-.navigation_bar {width:100%; height: 50px; line-height: 50px; background: #000; color: #fff; position: fixed; top:0px; left:0px; z-index: 5;}
+.navigation_bar {width:100%; min-height: 50px; line-height: 50px; background: #000; color: #fff; position: fixed; top:0px; left:0px; z-index: 5;}
+.navigation_show {display: none;}
 
 .navigation_bar .navigation {display: inline-block; float: left;}
 .navigation_bar .navigation {width: 70%}
 .navigation_bar .navigation .menu {margin-left: 10%; display: inline-block;}
-.navigation_bar .navigation .menu li {display:inline-block; height: 100%; *float:left; zoom:1; font-size:18px; cursor: pointer; padding: 0px 20px 0px 20px;}
+.navigation_bar .navigation .menu li {display:inline-block; height: 50px; *float:left; zoom:1; font-size:18px; cursor: pointer; padding: 0px 20px 0px 20px;}
 .navigation_bar .navigation .menu li a,
 .navigation_bar .navigation .menu li a:visited {display:inline-block; zoom:1; color:#fff;}
-.navigation_bar .navigation .menu li a:hover {text-decoration:none;}
+.navigation_bar .navigation .menu li a:hover {text-decoration:none; color: yellow;}
 .navigation_bar .navigation .menu .on a span {color:red;}
 #sub-menu-homework {z-index: 10; position: fixed; display: none;}
 
-.social {display: inline-block; line-height: 50px; float: right; padding: 8px 0 8px;}
+.social {display: inline-block; height: 50px; line-height: 50px; float: right; padding-top: 0px;}
 .social {text-align: center; padding-right: 10%;}
 .social a {width: 30px; display: inline-block;}
 .social img{width: 25px;}
@@ -75,3 +76,36 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .navigation_bar .navigation .menu .sub-menu li {position: relative; display:block; height: 50px;}
 
 .text {position: absolute; top: 50%; left: 50%; color:#999; font-size:14px;line-height:1.6em;}
+
+/**************container**************/
+.container {width: 73%; margin: 0 auto; border-left-style: solid; border-right-style: solid; border-color: #ddd; border-width: thin; padding-top: 50px;}
+.container {overflow: hidden; zoom: 1;}
+
+.container #header {margin: 0 auto; width: 100%; text-align: center;}
+.container #logo img {width: 80%; margin: 0 auto;}
+
+#featured_area {width: 100%; min-height: 50px; border-top-style: solid; border-color: #ddd; border-width: thin;}
+#featured_area .feature_big {width: 58.8%; height: 50%; float: left; display: inline-block; padding: 2% 1% 2% 2%; position: relative; display: inline-block;}
+#featured_area .feature_big {overflow: hidden; zoom: 1;}
+#featured_area .feature_big a {width: 100%;}
+#featured_area .feature_big a img {width: 100%; height: 100%;}
+#featured_area .feature_big .feature_text {font-family: "Georgia"; position: absolute; top: 50%; left: 50%;}
+#featured_area .first {background-image: url('../news_me.png'); background-size: 100% 100%; width: 33.2%; height: 24%; margin: 2% 2% 1% 1%; float: right; display: inline-block;}
+#featured_area .second {background-image: url('../news_recommended.jpg'); background-size: 100% 100%; width: 33.2%; height: 24%; margin: 1% 2% 2% 1%; float: right; display: inline-block;}
+.second h2, .second p a, .second p {float: right; display: block;}
+
+/**************responsive design***********/
+
+@media (max-width: 600px){
+	.navigation_bar {display: none;}
+	#menu-item-home, #menu-item-log {padding-left: 65px;}
+	.navigation_show {display: block; width: 30px; position: fixed; z-index: 15; top: 15px; left: 15px;}
+	.navigation_show img {width: 50px;}
+	.container {padding-top: 0;}
+
+	.container {width: 90%;}
+
+	#featured_area .feature_big .feature_text {display: none;}
+	#featured_area .feature_big {width: 96%; height: auto; padding: 2% 2% 1% 2%;}
+	#featured_area .first, #featured_area .second {width: 96%; margin: 1% 2% 1% 2%;}
+}
