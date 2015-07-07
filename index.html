@@ -17,10 +17,10 @@
 
 	<body>
         <div class="navigation_bar">
-            <div id="navigation">
+            <div class="navigation">
                 <ul id="menu-menu-1" class="menu">
-                    <li id="menu-item-home" calss="on">
-                    	<a href="./">
+                    <li id="menu-item-home" class="menu-item">
+                    	<a href="./index.html">
                     		<span style="color:red">主页</span>
                     	</a>
                     </li>
@@ -30,17 +30,17 @@
                         </a>
                     </li>
                     <li id="menu-item-course" class="menu-item">
-                        <a href="./course.html">
+                        <a href="./course.html" id="menu-item-homework-list">
                         	<span>Web 前端课程展示</span>
                         </a>
                         <ul id="sub-menu-homework" class="sub-menu">
-                            <li id="menu-item-homework1" class="menu-item">
+                            <li id="menu-item-homework1" class="sub-menu-item">
                                     <a href="./course/homework1">
                                     	<span>Homework 1</span>
                                     </a>
                             </li>
-                            <li id="menu-item-homework2" class="menu-item">
-                                    <a href="./course/homework2">
+                            <li id="menu-item-homework2" class="sub-menu-item">
+                                    <a href="http://www.weibo.com/favicon.ico">
                                         <span>Homework 2</span>
                                     </a>
                             </li>
@@ -50,15 +50,25 @@
             </div>
 
             <div id="top_social" class="social">
-                <a href="/">
+                <a href="./">
                     <img src="http://www.weibo.com/favicon.ico" alt="" width="25"/>
+                </a>
+                <a href="./">
+                    <img src="http://weixin.qq.com/zh_CN/htmledition/images/favicon1fbcbe.ico"/>
+                </a>
+                <a href="./">
+                    <img src="http://c.csdnimg.cn/public/favicon.ico"/>
                 </a>
             </div>
         </div>
 
+        <div class="text">
+            <h1>Still empty.</h1>
+        </div>
+
         <script type="text/javascript">
             $(function(){
-                $('#menu-item-course').click(function(e){
+                $('#menu-item-course').hover(function(e){
                     e.preventDefault();
 
                     if($('#sub-menu-homework').is(':visible')){
