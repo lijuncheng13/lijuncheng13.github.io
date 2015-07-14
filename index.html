@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
     	<!--
@@ -12,6 +13,8 @@
     	<link rel="stylesheet" href="./css/home_page.css" type="text/css" />
     	<link rel="shortcut icon" href="./letter-c.ico" type="image/x-icon" />
     	<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="./atom.xml" />
+        <link rel='stylesheet' id='default_nav_font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400%2C700&#038;ver=4.0.5' type='text/css' media='all' />
+        <link rel='stylesheet' id='default_headings_font-css'  href='http://fonts.googleapis.com/css?family=Roboto%3A400%2C100%2C300%2C700&#038;ver=4.0.5' type='text/css' media='all' />
     	<script src="./js/jquery-1.7.1.min.js" type="text/javascript"></script>
 	</head>
 
@@ -130,9 +133,117 @@
                 </div>
             </div>
             <!-- END FEATURED_AREA -->
+
+            <div class="content sidebar">
+                <div class="homepage_widget">
+                    <h2 class="content-heading">
+                        HERE&apos;S WHAT&apos;S NEW
+                    </h2>
+                    <ul class="newsfeed">
+                        <li>
+                            <div class="item">
+                                <div class="item-image">
+                                    <a href="./log/2015-07-07/" rel="bookmark">
+                                        <img src="./log/2015-07-07/photo.jpg" id="log/2015-07-07/photo.jpg"
+                                        class="attachment-newsfeed wp-post-image" alt="DSC_8809 edit" /
+                                        onmouseover="highlight('log/2015-07-07/photo.jpg', 200);"
+                                        onmouseout="dehighlight('log/2015-07-07/photo.jpg', 200);">
+                                    </a>
+                                </div>
+                                <span class="category">
+                                    <a href="./log/category/study.html">
+                                        Study
+                                    </a>
+                                </span>
+                                <!--
+                                <span class="item-comments">
+                                    <a href="http://iamgalla.com/2015/06/new-york-by-nick-astoria/#comments"
+                                    title="Comment on New York By Nick: Astoria">
+                                        12
+                                    </a>
+                                </span>
+                                -->
+                                <h3>
+                                    <a href="./log/2015-07-07/" rel="bookmark">
+                                        绿烟生雾，翠玉凝露
+                                    </a>
+                                </h3>
+                                <p>
+                                    竹，绿烟生雾，翠玉凝露，纳凉避暑，清幽去处。杆杆临风玉树，叶叶风骨不俗。
+                                    ...
+                                </p>
+                                <span class="item_meta">
+                                    On July 07, 2015
+                                    <span class="line">
+                                        /
+                                    </span>
+                                    By
+                                    <a href="./" title="Posts by 菡萏"
+                                    rel="author">
+                                        菡萏
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class ="last">
+                            <div class="item">
+                                <div class="item-image">
+                                    <a href="./log/2015-07-06/" rel="bookmark">
+                                        <img src="./log/2015-07-06/photo.jpg"
+                                        class="attachment-newsfeed wp-post-image" alt="DSC_8809 edit" />
+                                    </a>
+                                </div>
+                                <span class="category">
+                                    <a href="./log/category/study.html">
+                                        Study
+                                    </a>
+                                </span>
+                                <!--
+                                <span class="item-comments">
+                                    <a href="http://iamgalla.com/2015/06/new-york-by-nick-astoria/#comments"
+                                    title="Comment on New York By Nick: Astoria">
+                                        12
+                                    </a>
+                                </span>
+                                -->
+                                <h3>
+                                    <a href="./log/2015-07-06">
+                                        烟雨江南
+                                    </a>
+                                </h3>
+                                <p>
+                                    笼罩在氤氲薄雾中的江南，愈发增添了一段清雅别致的妩媚颜色，浅翠娇青，笼烟惹湿
+                                    ...
+                                </p>
+                                <span class="item_meta">
+                                    On July 06, 2015
+                                    <span class="line">
+                                        /
+                                    </span>
+                                    By
+                                    <a href="./" title="Posts by unknown"
+                                    rel="author">
+                                        unknown
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="homepage_widget">
+                    <div class="widget_ad">
+                        <a href="./">
+                            <img src="./bottom_ad.jpeg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT & SIDEBAR -->
         </div>
         <!-- END CONTAINER -->
 
+        <!-- Drop menu for homework exhibition -->
         <script type="text/javascript">
             $(function(){
                 $('#menu-item-course').hover(function(e){
@@ -148,6 +259,7 @@
             })
         </script>
 
+        <!-- Navigation show/hide for small screen -->
         <script type="text/javascript">
             $(function(){
                 $('#navigation_show').click(function(e){
@@ -161,6 +273,53 @@
                     }
                 });
             })
+        </script>
+
+        <!-- Highlight picture when mouse on it -->
+        <script type="text/javascript">
+            function highlight(id, time) {
+                var slots = time / 10.0;
+                var step = 0.2 / slots;
+                //setTimeout('alert(time + "alert")', 10);
+                //var opacity = 0.8;
+                //document.getElementById(id).style.opacity = opacity + "";
+                decrement(id, step, 1.0);
+            }
+            function decrement(id, step, opacity) {
+                document.getElementById(id).style.opacity = opacity + "";
+                opacity -= step;
+                window.m_id = id;
+                window.m_step = step;
+                window.m_opacity = opacity;
+                //setTimeout('alert(opacity + "");', 10);
+                if (opacity > 0.8) {
+                    setTimeout("decrement(m_id, m_step, m_opacity);", 10);
+                }
+                else {
+                    document.getElementById(id).style.opacity = "0.8";
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function dehighlight(id, time) {
+                var slots = time / 10;
+                var step = 0.2 / slots;
+                increment(id, step, 0.8);
+            }
+            function increment(id, step, opacity) {
+                document.getElementById(id).style.opacity = opacity + "";
+                opacity += step;
+                window.m_id = id;
+                window.m_step = step;
+                window.m_opacity = opacity;
+                //setTimeout('alert(opacity + "");', 10);
+                if (opacity < 1.0) {
+                    setTimeout("increment(m_id, m_step, m_opacity);", 10);
+                }
+                else {
+                    document.getElementById(id).style.opacity = "1.0";
+                }
+            }
         </script>
 	</body>
 </html>
