@@ -5,7 +5,8 @@
 
 /* 重置浏览器CSS */
 html{color:#000;}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
 body,button,input,select,textarea{font-size:12px/1.5;}
 input,select,textarea{font-size:100%;}
@@ -45,7 +46,8 @@ h3 {font-size:18px;font-weight:bold;margin-bottom:25px;}
 h4,h5,h6 {font-weight:bold;margin-bottom:15px;}
 p {margin-bottom:40px;line-height:1.8em;}
 code {background:#eee;border:1px solid #ccc;padding:0 5px;font-family:"Courier";line-height:14px;font-size:14px;word-wrap:break-word; }
-pre {background-color:#000;padding:15px;overflow:auto;margin-bottom:40px;font-size:14px;border: 1px solid #eee;-webkit-border-radius: 4px 4px 4px 4px;-moz-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;color:#b9bdb6;margin-top:-20px; }
+pre {background-color:#000;padding:15px;overflow:auto;margin-bottom:40px;font-size:14px;border: 1px solid #eee;-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;color:#b9bdb6;margin-top:-20px; }
 h4+pre, h3+pre { margin-top:20px; }
 pre code{background-color:transparent;border:none;padding:0;word-wrap:normal;}
 pre ol{margin-left:25px;list-style-type:decimal;}
@@ -59,7 +61,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 
 .navigation_bar .navigation {display: inline-block; float: left;}
 .navigation_bar .navigation {width: 70%}
-.navigation_bar .navigation .menu {margin-left: 10%; display: inline-block;}
+.navigation_bar .navigation .menu {margin-left: 10%; display: inline-block; float: left; }
 .navigation_bar .navigation .menu li {display:inline-block; height: 45px; *float:left; zoom:1; font-size:18px; cursor: pointer; padding: 0px 20px 0px 20px;}
 .navigation_bar .navigation .menu li a,
 .navigation_bar .navigation .menu li a:visited {display:inline-block; zoom:1; color:#fff;}
@@ -74,3 +76,142 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 
 .navigation_bar .navigation .menu .sub-menu {position: relative; color:#fff; background:#000; text-align:center; display:none;}
 .navigation_bar .navigation .menu .sub-menu li {position: relative; display:block; height: 45px;}
+
+/****************container*******************/
+body { background-color: #eee; font-size: 84%; text-align: center; }
+#container { margin-top: 45px; display: inline-block; margin-right: auto; margin-left: auto; }
+#container .column { display: inline-block; vertical-align: top; margin: 0 5px 0 5px; float: left; }
+#container .pic_a { display:block; padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; background-color:#fff; text-decoration: none; }
+#container .pic_a .a_img { display: none; margin: 0 auto 5px; border: 0; vertical-align: bottom; width: 100%; }
+#container .pic_a strong { color: #333;}
+
+/******************show_detail******************************/
+
+.noScroll { overflow: hidden; }
+#show_detail { position: fixed; top: 0; right: 0; left: 0; bottom: 0; background: rgba(255,255,255,0.8); z-index: 100; overflow-y: auto; display: none; }
+.show_detail_content { display: inline-block; overflow: hidden; zoom: 1; margin:50px auto; width:70%; position:static; text-align:center;
+	cursor: -webkit-zoom-out; cursor: -moz-zoom-out; cursor: zoom-out; } 
+.show_detail_content .pic_detail { /*width: 98%;*/ margin:40px auto; border: none; }
+
+
+/**********************comments*******************************/
+/*
+.comments { width: 100%; height: 50px; padding-top: 10px; position: relative;}
+.comments_content { height: 50px; margin: 0 0 0 112px; padding: 10px 15px 5px 15px; border-top: 1px solid #fff; background-color: #A6DADC; word-wrap: break-word;
+	font-family: "华文行楷", "Helvetica","sans-serif"; background-color: rgba(166, 218,220,1); background-image:-moz-linear-gradient(hsla(0,0%,100%, 0.6), hsla(0, 0%, 100%, 0)  30px);
+	background-image:-webkie-gradient(linear, 0 0, 0 30, from(hsla(0, 0%, 100%, 0.6)), to(hsla(0, 0%, 100%, 0)));
+	-moz-box-shadow:1px 1px 2px hsla(0, 0%, 0%, 0.3); -webkit-box-shadow:1px 1px 2px hsla(0, 0%, 0%, 0.3); box-shadow:1px 1px 2px hsla(0, 0%, 0%, 0.3); }
+.radius { -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+.triangle { height:0px; width:0px; border-width:20px; border-style:solid; border-color:green transparent transparent transparent; }
+.left { display: inline-block; float: left; }
+.left:after { position:absolute; content:"\00a0"; width:0px; height:0px; border-width:8px 18px 8px 0; border-style:solid;
+	border-color:transparent #A6DADC transparent transparent; top:15px; left:-18px; }
+.right {display: inline-block; float: right; }
+.right:before { position: absolute; content:"\00a0"; display:inline-block; width:0px; height:0px; border-width:8px 0px 8px 18px;
+	border-style:solid; border-color:transparent transparent transparent #A6DADC; left:250px; top:15px; }
+*/
+
+#show_detail {
+	margin: 0;
+	padding: 40px;
+	/*background: url();*/
+	font-family: "微软雅黑", "Segoe UI", Segoe, Calibri, Arial, sans-serif;
+}
+.show_detail_content .show_detail ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.show_detail_content .comment {
+	float: left; /* float containment */
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+.show_detail_content .comment_meta {
+	float: left;
+	width: 100px;
+	font-size: 84%;
+	text-align: right;
+	text-shadow: 1px 1px 0 hsla(0,0%,100%,.7);
+}
+.show_detail_content .comment_meta img {
+	-moz-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+/*
+.ie8 .comment-meta img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.9961946980917455, M12=0.08715574274765817, M21=-0.08715574274765817, M22=0.9961946980917455)";
+	position: relative;
+	top: -5px;
+	left: -5px;
+}
+*/
+.show_detail_content .comment_meta h4 {
+	margin: 0;
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 1;
+}
+.show_detail_content .comment_meta span {
+	font-size: 84%;
+	color: #666;
+}
+.show_detail_content blockquote p {
+	font-family: "华文行楷";
+	margin: 0;
+	text-align: left;
+	padding: 0 0 10px 0;
+	height: 80%;
+	font-size: 35px;
+}
+.show_detail_content blockquote {
+	position: relative;
+	min-height: 42px;
+	margin: 0 0 0 112px;
+	padding: 10px 15px 5px 15px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px; /* Safari 4 and earlier */
+	border-radius: 20px; /* Opera, Chrome, Safari 5, IE 9 */
+	border-top: 1px solid #fff;
+	background-color: hsla(182,44%,76%,.5);
+	background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0) 30px);
+	background-image: -webkit-gradient(linear, 0 0, 0 30, from(hsla(0,0%,100%,.6)), to(hsla(0,0%,100%,0)));
+	-moz-box-shadow: 1px 1px 2px hsla(0,0%,0%,.3);
+	-webkit-box-shadow: 1px 1px 2px hsla(0,0%,0%,.3);
+	box-shadow: 1px 1px 2px hsla(0,0%,0%,.3); /* Opera, IE 9 */
+	word-wrap: break-word;
+}
+/*
+.ie6 blockquote, .ie7 blockquote { IE 5.5, 6, 7
+	background: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E3F4EE, endColorstr=#99A6DADC);
+	zoom: 1;
+}
+*/
+/*
+.ie8 blockquote {
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E3F4EE, endColorstr=#99A6DADC)";
+}
+*/
+blockquote:after {
+	content: "\00a0"; /* &nbsp; */
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: -20px; /* width of right border */
+	width: 0;
+	height: 0;
+	border-width: 10px 20px 10px 0;
+	border-style: solid;
+	border-color: transparent hsla(182,44%,76%,.5) transparent transparent;
+}
+blockquote:hover {
+	top: -2px;
+	left: -2px;
+	-moz-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	-webkit-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	box-shadow: 3px 3px 2px hsla(0,0%,0%,.3); /* Opera, IE 9 */
+	text-shadow: 1px 1px 1px hsla(0,0%,100%,.7); /* FF, Opera, Safari, Chrome */
+}

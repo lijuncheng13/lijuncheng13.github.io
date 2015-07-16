@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            show big picture demo
+        </title>
+        <script type="text/javascript" src="../js/jquery-1.7.1.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("div.photoShow img").click(function() {
+                    $("body").addClass("noScroll");
+                    $("#showDetail").css("display", "block");
+                });
+                $("#showDetail").click(function() {
+                    $("body").removeClass("noScroll");
+                    $("#showDetail").css("display", "none");
+                })
+            });
+        </script>
+        <style type="text/css">
+            /*在点击了img之后给body设置class为noScroll,以使body高度照显，但是没有滚动条，这样上层的showDetail细节元素就可以在高度超出了窗口大小时显示滚动，而不会有body的滚动来影响他（出现两个滚动）*/
+            .noScroll{ overflow:hidden; }
+            div.photoShow img { float:left; width:300px; height:300px; border:1px solid #CCCCCC; margin:5px; padding:2px; /*指针变为地图上常见的放大图标*/ cursor: -webkit-zoom-in; cursor: -moz-zoom-in; cursor: zoom-in; }
+            div.photoShow { width:100%; margin:10px auto; width:1265px; }
+            #showDetail { /*注意必须设置成fixed，这样在页面内部设置其他position才不会对此产生影响*/ position:fixed; /*top、bottom、right、left设置为0，保证不透明背景遮罩全屏*/ top:0; right:0; left:0; bottom:0; background:rgba(255,255,255,0.2); z-index:999; overflow-x:auto; overflow-y: scroll; display: none; }
+            .showDetailContent { margin:50px auto; height:1000px; width:600px; color:red; /*设置成static之后，对该元素设置left,right,bottom,top之类的没用*/ position:static; text-align:center; /*指针变为一般地图上常见的缩小图标*/ cursor: -webkit-zoom-out; cursor: -moz-zoom-out; cursor: zoom-out; } 
+            .showDetailContent img { height:700px; width:500px; margin:40px; border:none; }
+            .showDetailContent a { text-decoration:none; color:red; font-size:14px; font-family:"微软雅黑" ,Arial, Helvetica, sans-serif; font-weight:bold; }
+        </style>
+    </head>
+    
+    <body>
+        <div class="photoShow">
+            <img src="../waterfall/pictures/0000_downbank.jpg" />
+            <img src="../waterfall/pictures/0001_downbank.jpg" />
+            <img src="../waterfall/pictures/0002_downbank.jpg" />
+            <img src="../waterfall/pictures/0003_downbank.jpg" />
+            <img src="../waterfall/pictures/0004_downbank.jpg" />
+            <img src="../waterfall/pictures/0005_downbank.jpg" />
+            <img src="../waterfall/pictures/0006_downbank.jpg" />
+            <img src="../waterfall/pictures/0007_downbank.jpg" />
+            <img src="../waterfall/pictures/0008_downbank.jpg" />
+            <img src="../waterfall/pictures/0009_downbank.jpg" />
+            <img src="../waterfall/pictures/0010_downbank.jpg" />
+            <img src="../waterfall/pictures/0011_downbank.jpg" />
+            <img src="../waterfall/pictures/0012_downbank.jpg" />
+            <img src="../waterfall/pictures/0013_downbank.jpg" />
+            <img src="../waterfall/pictures/0014_downbank.jpg" />
+            <img src="../waterfall/pictures/0015_downbank.jpg" />
+        </div>
+        <!--pinterest.com网站是通过点击喜欢的图片然后动态添加要在页面上层放大显示的图片的dom元素的，当点击大图又返回原图时remove相应的dom来实现的，但是这里为了方便仅通过点击元素来show
+        or hide dom元素的方式来实现，总之效果实现就ok-->
+        <div id="showDetail">
+            <div class="showDetailContent">
+                <img src="../waterfall/pictures/0000_downbank.jpg" />
+                <a href="#">
+                    点击元素的大图显示，再次点击返回
+                </a>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -5,7 +5,7 @@
     	* Author:         Li Juncheng
     	-->
     	<meta charset="utf-8" />
-    	<title>lijuncheng</title>
+    	<title>waterfall</title>
     	<meta name="author" content="Li Juncheng" />
     	<meta name="renderer" content="webkit">
     	<meta name="description" content="Li Juncheng's home page" />
@@ -15,12 +15,12 @@
         <link rel='stylesheet' id='default_nav_font-css'  href='http://fonts.googleapis.com/css?family=Lato%3A400%2C700&#038;ver=4.0.5' type='text/css' media='all' />
         <link rel='stylesheet' id='default_headings_font-css'  href='http://fonts.googleapis.com/css?family=Roboto%3A400%2C100%2C300%2C700&#038;ver=4.0.5' type='text/css' media='all' />
     	<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="../js/waterfall.js"></script>
+        <script type="text/javascript" src="../js/navigation_bar.js"></script>
 	</head>
 
 	<body>
         <div id="navigation_show" class="navigation_show">
-            <img src="./letter-c.ico"/>
+            <img src="../letter-c.ico"/>
         </div>
 
         <div class="navigation_bar">
@@ -74,38 +74,15 @@
         </div>
         <!-- END CONTAINER -->
 
-        <!-- Drop menu for homework exhibition -->
-        <script type="text/javascript">
-            $(function(){
-                $('#menu-item-course').hover(function(e){
-                    e.preventDefault();
+        <div id="show_detail">
+            <!--
+            <div class="show_detail_content">
+            </div>
+            -->
+        </div>
+        <!-- END SHOW_DETAIL -->
 
-                    if($('#sub-menu-homework').is(':visible')){
-                        $('#sub-menu-homework').slideUp(200);
-                    }
-                    else{
-                        $('#sub-menu-homework').slideDown(200);
-                    }
-                });
-            })
-        </script>
-
-        <!-- Navigation show/hide for small screen -->
-        <script type="text/javascript">
-            $(function(){
-                $('#navigation_show').click(function(e){
-                    e.preventDefault();
-
-                    if($('.navigation_bar').is(':visible')){
-                        $('.navigation_bar').slideUp(200);
-                    }
-                    else{
-                        $('.navigation_bar').slideDown(200);
-                    }
-                });
-            })
-        </script>
-
+        <script type="text/javascript" src="../js/waterfall.js"></script>
         <!-- Highlight picture when mouse on it -->
         <script type="text/javascript">
             function highlight(id, time) {
